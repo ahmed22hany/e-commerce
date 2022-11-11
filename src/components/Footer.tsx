@@ -7,7 +7,31 @@ import { FaAngleRight } from 'react-icons/fa'
 const information = ['About Us', 'Delivery Information', 'Privacy Policy', 'Terms & Conditions', 'Contact Us', 'Search', 'Cart', 'Newsteller', 'Specials'];
 const customer = ['Specials', 'Return', 'Site map', 'Brands', 'Gift Certifications', 'Downlods', 'Transaction', 'Blogs'];
 const account = ['My account', 'Order History', 'Wishlist', 'Compare', 'Checkout', 'Cart'];
+interface FooterLinksProps {
+    links: string[]
+    header: string
+}
 
+const FooterLinks = (props: FooterLinksProps) => {
+    const { links, header } = props;
+    return (
+        <Box width={'100%'}>
+            <Heading as='h5' fontSize={'lg'} my={'3'}>{header}</Heading>
+            {links.map((value) => {
+                return (
+                    <UnorderedList m={'0'}>
+                        <Box cursor={'pointer'} transition={'all .3s ease'} width={'fit-content'} _hover={{ color: '#bbb' }}>
+                            <Flex alignItems={'center'} height={'100%'}>
+                                <FaAngleRight />
+                                <ListItem my={'1.5'} ms={'1'} listStyleType={'none'}>{value}</ListItem>
+                            </Flex>
+                        </Box>
+                    </UnorderedList>
+                )
+            })}
+        </Box>
+    )
+}
 
 const Footer = () => {
     return (
@@ -34,52 +58,13 @@ const Footer = () => {
             </Box>
             <Box py={'50px'} borderBottom={'1px solid #CCC'}>
                 <Flex justifyContent={'space-around'}>
-                    <Box width={'100%'} ms={'30px'}>
-                        <Heading as='h5' fontSize={'lg'} my={'3'}>Information</Heading>
-                        {information.map((value) => {
-                            return (
-                                <UnorderedList m={'0'}>
-                                    <Box cursor={'pointer'} transition={'all .3s ease'} width={'fit-content'} _hover={{ color: '#bbb' }}>
-                                        <Flex alignItems={'center'} height={'100%'}>
-                                            <FaAngleRight />
-                                            <ListItem my={'1.5'} ms={'1'} listStyleType={'none'}>{value}</ListItem>
-                                        </Flex>
-                                    </Box>
-                                </UnorderedList>
-                            )
-                        })}
-                    </Box>
 
-                    <Box width={'100%'}>
-                        <Heading as='h5' fontSize={'lg'} my={'3'}>Customer Service</Heading>
-                        {customer.map((value) => {
-                            return (
-                                <UnorderedList m={'0'}>
-                                    <Box cursor={'pointer'} transition={'all .3s ease'} width={'fit-content'} _hover={{ color: '#bbb' }}>
-                                        <Flex alignItems={'center'} height={'100%'}>
-                                            <FaAngleRight />
-                                            <ListItem my={'1.5'} ms={'1'} listStyleType={'none'}>{value}</ListItem>
-                                        </Flex>
-                                    </Box>
-                                </UnorderedList>
-                            )
-                        })}
-                    </Box>
-                    <Box width={'100%'}>
-                        <Heading as='h5' fontSize={'lg'} my={'3'}>My Account</Heading>
-                        {account.map((value) => {
-                            return (
-                                <UnorderedList m={'0'}>
-                                    <Box cursor={'pointer'} transition={'all .3s ease'} width={'fit-content'} _hover={{ color: '#bbb' }}>
-                                        <Flex alignItems={'center'} height={'100%'}>
-                                            <FaAngleRight />
-                                            <ListItem my={'1.5'} ms={'1'} listStyleType={'none'}>{value}</ListItem>
-                                        </Flex>
-                                    </Box>
-                                </UnorderedList>
-                            )
-                        })}
-                    </Box>
+
+
+                    <FooterLinks header='Information' links={information} />
+                    <FooterLinks header='Customer Service' links={customer} />
+                    <FooterLinks header='My Account' links={account} />
+
                     <Box width={'100%'} position={'relative'} bgGradient={'linear(180deg,#f0f0f0 10%,#FFF 60%)'} me={'4'}>
                         <Center>
                             <Image p={'30px'} src='https://opencart.templatemela.com/OPC10/OPC100247/OPC1/catalog/view/theme/OPC100247_1/image/megnor/contact-bg.png' />
