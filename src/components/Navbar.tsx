@@ -6,7 +6,7 @@ import { FiRefreshCcw, FiShoppingBag } from 'react-icons/fi'
 import { BsHeart } from 'react-icons/bs'
 import DrawerExample from './DrawerExample'
 const category = ['Grecory', 'Kids', 'Fashion', 'Gadgets', 'Electronics', 'Appliances', 'AutoParts', 'Kitchen', 'Books', 'Baby Products', 'Furniture', 'Tool', 'Bag Pack', 'Sports and Fitness', 'Beauty Products'];
-const account = ['Login', 'Sign Up', 'Checkout', 'currency']
+const account = ['Login', 'Sign Up', 'Checkout', 'Currency']
 
 const Navbar = () => {
     return (
@@ -47,7 +47,7 @@ const Navbar = () => {
                             <Box>
                                 <Flex>
                                     <InputGroup width={'265px'} >
-                                        <Input placeholder='Search Products...' border={'0px'} borderLeftRadius={'0px'} type={'text'} bg={'#fff'} borderRightRadius={'20px'} />
+                                        <Input _focus={{ border: 'none', outline: 'none', boxShadow: 'none' }} placeholder='Search Products...' border={'0px'} borderLeftRadius={'0px'} type={'text'} bg={'#fff'} borderRightRadius={'20px'} />
                                         <InputRightElement children={<BiSearch />} />
                                     </InputGroup>
                                 </Flex>
