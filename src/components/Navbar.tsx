@@ -1,41 +1,97 @@
-import Link from 'next/link'
 import React from 'react'
-import { Button, Box, Flex } from '@chakra-ui/react'
-import { GiHamburgerMenu } from 'react-icons/gi'
+import { Button, Box, Flex, Image, Center, Menu, MenuButton, MenuList, MenuItem, Input, InputRightElement, InputGroup, HStack } from '@chakra-ui/react'
+import { CgChevronDown } from 'react-icons/cg'
+import { BiSearch } from 'react-icons/bi'
+import { FiRefreshCcw, FiShoppingBag } from 'react-icons/fi'
+import { BsHeart } from 'react-icons/bs'
+import DrawerExample from './DrawerExample'
+const category = ['Grecory', 'Kids', 'Fashion', 'Gadgets', 'Electronics', 'Appliances', 'AutoParts', 'Kitchen', 'Books', 'Baby Products', 'Furniture', 'Tool', 'Bag Pack', 'Sports and Fitness', 'Beauty Products'];
+const account = ['Login', 'Sign Up', 'Checkout', 'currency']
+
 const Navbar = () => {
     return (
-        <nav>
-            <div className='container'>
-                <Flex>
-                    <Box m={4}>ahemd</Box>
-                    <Box m={4}>hany</Box>
-                </Flex>
-                <div className='logo'><Button margin={2} backgroundColor={'red.300'}>Hello</Button></div>
-                <div className='menu'><GiHamburgerMenu /></div>
+        <Box bg={'#f7d929'} p={'5'}>
+            <Flex>
+                <Box width={'100%'}>
+                    <Flex>
+                        <Center>
+                            <Image
+                                src='https://opencart.templatemela.com/OPC10/OPC100247/OPC1/image/catalog/Logo.png'
+                                alt='Logo'
+                            />
+                            <Box ms={'5'} fontSize={'30'}>
+                                <DrawerExample />
+                            </Box>
+                        </Center>
+                    </Flex>
+                </Box>
 
-                <div className='search-container'>
-                    <div className='category'>
-                        <p>All Categories</p>
-                    </div>
-                    <div className='search-box'>
-                        <input type="text" name='search' placeholder='Search Products...' />
-                    </div>
-                </div>
 
-                <div className='Account'>
-                    <div className='drop-account'>
-                        <ul>
-                            <Link href='./login'>Login</Link>
-                            <Link href='./sign-up'>Sign Up</Link>
-                            <Link href='./checkout'>Check Out</Link>
-                            <Link href='./currency'>Currency</Link>
-                        </ul>
-                    </div>
-                    <div className='icons'>Some Icons</div>
-                </div>
+                <Box width={'100%'}>
+                    <Flex alignItems={'center'} height={'100%'}>
+                        <Center>
+                            <Box>
+                                <Menu>
+                                    <MenuButton as={Button} _hover={{ bg: '#FFF' }} _active={{ bg: '#FFF' }} borderRightRadius={'0px'} borderRightColor={'transparent'} textAlign={'left'} borderLeftRadius={'20px'} width={'200px'} bg={'#fff'} rightIcon={<CgChevronDown />}>
+                                        All Catigories
+                                    </MenuButton>
+                                    <MenuList overflow={'scroll'} height={'400px'}>
+                                        {category.map((value) => {
+                                            return <MenuItem>{value}</MenuItem>
+                                        })}
 
-            </div>
-        </nav>
+                                    </MenuList>
+                                </Menu>
+                            </Box>
+                            <Box className='bef'></Box>
+                            <Box>
+                                <Flex>
+                                    <InputGroup width={'265px'} >
+                                        <Input placeholder='Search Products...' border={'0px'} borderLeftRadius={'0px'} type={'text'} bg={'#fff'} borderRightRadius={'20px'} />
+                                        <InputRightElement children={<BiSearch />} />
+                                    </InputGroup>
+                                </Flex>
+                            </Box>
+                        </Center>
+                    </Flex>
+                </Box>
+
+                <Box width={'100%'}>
+                    <Flex justifyContent={'space-around'} alignItems={'center'} height={'100%'}>
+                        <Box>
+                            <Menu>
+                                <MenuButton as={Button} _hover={{ bg: 'black' }} _active={{ bg: 'black' }} width={'200px'} bg={'black'} color={'#FFF'} fontSize={'16px'} borderLeftRadius={'20px'} borderRightRadius={'20px'} rightIcon={<CgChevronDown />} >
+                                    MY ACCOUNT
+                                </MenuButton>
+                                <MenuList>
+                                    {account.map((details) => {
+                                        return <MenuItem>{details}</MenuItem>
+                                    })}
+                                </MenuList>
+                            </Menu>
+                        </Box>
+
+                        <Box fontSize={'25'} >
+                            <FiRefreshCcw />
+                        </Box>
+                        <Box fontSize={'25'} position={'relative'}>
+                            <BsHeart />
+                            <Box width={'20px'} height={'20px'} position={'absolute'} top={'-12px'} right={'-3'} bg={'black'} borderRadius={'50%'}>
+                                <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '12px', color: '#fff' }}>0</span>
+                            </Box>
+                        </Box>
+                        <Box fontSize={'25'} position={'relative'}>
+                            <FiShoppingBag />
+                            <Box width={'20px'} height={'20px'} position={'absolute'} top={'-12px'} right={'-3'} bg={'black'} borderRadius={'50%'}>
+                                <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '12px', color: '#fff' }}>0</span>
+                            </Box>
+                        </Box>
+                    </Flex>
+                </Box>
+
+            </Flex >
+
+        </Box >
     )
 }
 

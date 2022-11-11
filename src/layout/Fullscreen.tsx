@@ -1,8 +1,9 @@
 import React from 'react'
 import { Box } from '@chakra-ui/react'
 import Navbar from '../components/Navbar'
+
 interface FulscreenProps {
-    children: React.ReactElement;
+    children: React.ReactElement
 }
 
 const Fullscreen = (props: FulscreenProps) => {

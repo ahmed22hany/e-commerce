@@ -30,11 +30,16 @@ a {
   }
 }
 
+.bef {
+  position: relative;
+}
 
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--gold-color);
+.bef::before {
+  content: '';
+  width: 1px;
+  height: 25px;
+  background-color: #ccc;
+  position: absolute;
+  top: -11px;
+  z-index: 55;
 }
