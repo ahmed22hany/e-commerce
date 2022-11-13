@@ -5,10 +5,12 @@ import { BiSearch } from 'react-icons/bi'
 import { FiRefreshCcw, FiShoppingBag } from 'react-icons/fi'
 import { BsHeart } from 'react-icons/bs'
 import DrawerExample from './DrawerExample'
-const category = ['Grecory', 'Kids', 'Fashion', 'Gadgets', 'Electronics', 'Appliances', 'AutoParts', 'Kitchen', 'Books', 'Baby Products', 'Furniture', 'Tool', 'Bag Pack', 'Sports and Fitness', 'Beauty Products'];
+import { useSelector } from 'react-redux'
+import { RootState } from '../redux/store'
 const account = ['Login', 'Sign Up', 'Checkout', 'Currency']
 
 const Navbar = () => {
+    const category = useSelector((store: RootState) => store.categories.data)
     return (
         <Box bg={'#f7d929'} p={'5'}>
             <Flex>
