@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Box, Flex, Image, Center, Menu, MenuButton, MenuList, MenuItem, Input, InputRightElement, InputGroup, HStack } from '@chakra-ui/react'
+import { Button, Box, Flex, Image, Center, Menu, MenuButton, MenuList, MenuItem, Input, InputRightElement, InputGroup } from '@chakra-ui/react'
 import { CgChevronDown } from 'react-icons/cg'
 import { BiSearch } from 'react-icons/bi'
 import { FiRefreshCcw, FiShoppingBag } from 'react-icons/fi'

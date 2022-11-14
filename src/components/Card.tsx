@@ -7,29 +7,32 @@ import {
     Stack
 } from "@chakra-ui/react";
 
+
 interface Cardprops {
+    image: string
     product: string
     summary: string
     longLine: string
 }
 
 function Card(props: Cardprops) {
-    const { product, summary, longLine } = props;
+    const { product, summary, longLine, image } = props;
 
     return (
         <Box
-            p={4}
-            display={{ md: "flex" }}
-            maxWidth="32rem"
+            px={'30px'}
+            py={'15px'}
+            display={"flex"}
+            flexDirection={'column'}
+            width={'266px'}
             borderWidth={1}
             margin={2}
         >
-
             <Image
                 maxWidth={'200px'}
                 margin={'auto'}
-                src="https://opencart.templatemela.com/OPC10/OPC100247/OPC1/image/catalog/Logo.png"
-                alt="Woman paying for a purchase"
+                src={image}
+                alt="product"
             />
             <Stack
                 align={{ base: "center", md: "stretch" }}
