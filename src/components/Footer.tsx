@@ -4,6 +4,7 @@ import { SlEnvolopeLetter } from 'react-icons/sl'
 import { GrFacebookOption, GrTwitter, GrInstagram, GrYoutube, GrPinterest } from 'react-icons/gr'
 import { FaAngleRight } from 'react-icons/fa'
 
+
 const information = ['About Us', 'Delivery Information', 'Privacy Policy', 'Terms & Conditions', 'Contact Us', 'Search', 'Cart', 'Newsteller', 'Specials'];
 const customer = ['Specials', 'Return', 'Site map', 'Brands', 'Gift Certifications', 'Downlods', 'Transaction', 'Blogs'];
 const account = ['My account', 'Order History', 'Wishlist', 'Compare', 'Checkout', 'Cart'];

@@ -43,3 +43,40 @@ a {
   top: -11px;
   z-index: 55;
 }
+
+.slick-prev {
+  left: 0 !important;
+  color: #ccc !important;
+  z-index: 5;
+}
+
+.slick-next {
+  right: 0 !important;
+  color: #CCC !important;
+  z-index: 5;
+}
+
+.slick-dotted.slick-slider {
+  margin-bottom: 10px !important;
+}
+
+.slick-dots li button:before {
+  font-size: 12px !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #f7d929 !important;
+}
+
+.slick-dots {
+  bottom: 10px !important;
+}
+
+.css-1kmb5dy {
+  transition: all .5s ease-in-out;
+}
+
+.css-b93e9j:hover .css-1kmb5dy {
+  transition: all .5s ease-in-out;
+  transform: rotateY(180deg);
+}
