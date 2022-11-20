@@ -1,10 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Box } from '@chakra-ui/react'
 import Card from './Card'
-import Slider from "../slider";
-
-
-
 
 const dataList = [
     {
@@ -88,22 +84,20 @@ const dataList = [
     }
 ];
 
-const Product = () => {
+const ProductNoSlider = () => {
     return (
-        <Box display={"flex"}>
-            <Slider settings={{ slidesToShow: 5, slideToScroll: 1, dots: false }} >
-                {
-                    dataList.map(function (data) {
-                        return (
-                            <div key={data.id}>
-                                <Card {...data} />
-                            </div>
-                        );
-                    })
-                }
-            </Slider>
+        <Box display={"flex"} flexWrap={'wrap'}>
+            {
+                dataList.map(function (data) {
+                    return (
+                        <div key={data.id}>
+                            <Card {...data} />
+                        </div>
+                    );
+                })
+            }
         </Box>
     )
 }
 
-export default Product
+export default ProductNoSlider
