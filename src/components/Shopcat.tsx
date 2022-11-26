@@ -14,7 +14,7 @@ const Shopcat = () => {
         <Tabs variant='enclosed'>
             <Box bg={'#f7d929'} pt={'3'} my={'3'} border={'none'} width={'100%'}>
                 <Center>
-                    <TabList border={'none'}>
+                    <TabList border={'none'} flexWrap={'wrap'} justifyContent={'center'}>
                         <Tab flexDirection={'column'} mx={'3'} _hover={{ bg: '#FFF' }} _selected={{ bg: '#FFF' }} fontSize={'50px'} >
                             <IoShirtOutline />
                             <Box fontSize={'12px'} fontWeight={'bold'} my={'2'}>GADGETS</Box>

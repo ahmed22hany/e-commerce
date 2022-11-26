@@ -29,7 +29,6 @@ function Card(props: Cardprops) {
                 py={'4'}
                 display={'flex'}
                 flexDirection={'column'}
-                width={'244px'}
                 border={'1px'}
                 borderColor='gray.200'
                 borderRadius={'15px'}
@@ -37,7 +36,7 @@ function Card(props: Cardprops) {
             >
                 <div className="hope">
                     <Image
-                        maxWidth={'236px'}
+                        maxWidth={'100%'}
                         margin={'auto'}
                         src={image}
                         alt="product"
