@@ -7,6 +7,8 @@ import { Provider } from 'react-redux'
 import { useEffect } from 'react'
 import { setCategoriesAction } from '../src/redux/categories'
 import { useDispatch } from 'react-redux'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const category = ['Grecory', 'Kids', 'Fashion', 'Gadgets', 'Electronics', 'Appliances', 'AutoParts', 'Kitchen', 'Books', 'Baby Products', 'Furniture', 'Tool', 'Bag Pack', 'Sports and Fitness', 'Beauty Products'];
 

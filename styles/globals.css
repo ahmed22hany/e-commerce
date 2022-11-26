@@ -60,7 +60,7 @@ a {
   margin-bottom: 10px !important;
 }
 
-.slick-dots li button:before {
+.slick-dots li button:before:first-child {
   font-size: 12px !important;
 }
 
@@ -79,4 +79,108 @@ a {
 .css-b93e9j:hover .css-1kmb5dy {
   transition: all .5s ease-in-out;
   transform: rotateY(180deg);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.on {
+  color: #f7d929;
+}
+
+.off {
+  color: #ccc;
+}
+
+.slick-slider {
+  width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #f7d929 !important;
+}
+
+.over {
+  visibility: hidden;
+  transform: translatey(-15px);
+}
+
+.hov:hover .over {
+  visibility: visible;
+  transform: translatey(0);
+  transition: all .4s ease-in-out;
+}
+
+.over:hover {
+  background-color: #222 !important;
+  color: #FFF;
+  transition: all .5s ease-in-out;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+/* try hover images */
+
+.hope {
+  position: relative;
+}
+
+.info {
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: -1;
+  transform: translatey(-5px);
+  visibility: hidden;
+  transition: all .2s ease;
+}
+
+.hope:hover .info {
+  max-width: 212px;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  transform: translatey(0);
+  visibility: visible;
+  transition: all .2s ease;
+}
+
+.icons {
+  position: absolute;
+  right: 100%;
+  top: 0;
+  z-index: -1;
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: all .3s ease;
+}
+
+.hope:hover .icons {
+  z-index: 3;
+  top: 3px;
+  right: 0;
+  visibility: visible;
+  transition: all .3s ease;
+}
+
+.css-praxsy:hover .css-1yotl1w {
+  transform: scale(1.03);
+}
+
+.css-praxsy:hover .css-6qxnjq {
+  opacity: 1;
+}
+
+.css-praxsy:hover .css-1az09j4 {
+  opacity: 1;
 }
