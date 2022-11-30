@@ -86,7 +86,7 @@ const dataList = [
 
 const ProductNoSlider = () => {
     return (
-        <Box display={"flex"} flexWrap={'wrap'}>
+        <Box display={"flex"} flexWrap={'wrap'} justifyContent={"center"}>
             {
                 dataList.map(function (data) {
                     return (

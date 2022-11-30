@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { Box } from '@chakra-ui/react'
+import { Box, useMediaQuery } from '@chakra-ui/react'
 import Card from './Card'
 import Slider from "../slider";
-
 
 
 
@@ -89,20 +88,109 @@ const dataList = [
 ];
 
 const Product = () => {
+    const [isLargerthan1440, isSmallerThan1440, isSmallerThan1024, isSmallerThan768, isSmallerThan507] = useMediaQuery(['(max-width: 1441px)', '(max-width: 1025px)', '(max-width: 1023px)', '(max-width: 768px)', '(max-width: 507px)'])
+
+    if (isSmallerThan507) {
+        return (
+            <Box display={"flex"}>
+                <Slider settings={{ slidesToShow: 1, slideToScroll: 1, dots: false }} >
+                    {
+                        dataList.map(function (data) {
+                            return (
+                                <div key={data.id}>
+                                    <Card {...data} />
+                                </div>
+                            );
+                        })
+                    }
+                </Slider>
+            </Box>
+        )
+    }
+
+
+    if (isSmallerThan768) {
+        return (
+            <Box display={"flex"}>
+                <Slider settings={{ slidesToShow: 2, slideToScroll: 1, dots: false }} >
+                    {
+                        dataList.map(function (data) {
+                            return (
+                                <div key={data.id}>
+                                    <Card {...data} />
+                                </div>
+                            );
+                        })
+                    }
+                </Slider>
+            </Box>
+        )
+    }
+
+    if (isSmallerThan1024) {
+        return (
+            <Box display={"flex"}>
+                <Slider settings={{ slidesToShow: 3, slideToScroll: 1, dots: false }} >
+                    {
+                        dataList.map(function (data) {
+                            return (
+                                <div key={data.id}>
+                                    <Card {...data} />
+                                </div>
+                            );
+                        })
+                    }
+                </Slider>
+            </Box>
+        )
+    }
+
+    if (isSmallerThan1440) {
+        return (
+            <Box display={"flex"}>
+                <Slider settings={{ slidesToShow: 4, slideToScroll: 1, dots: false }} >
+                    {
+                        dataList.map(function (data) {
+                            return (
+                                <div key={data.id}>
+                                    <Card {...data} />
+                                </div>
+                            );
+                        })
+                    }
+                </Slider>
+            </Box>
+        )
+    }
+
+    if (isLargerthan1440) {
+        return (
+            <Box display={"flex"}>
+                <Slider settings={{ slidesToShow: 5, slideToScroll: 1, dots: false }} >
+                    {
+                        dataList.map(function (data) {
+                            return (
+                                <div key={data.id}>
+                                    <Card {...data} />
+                                </div>
+                            );
+                        })
+                    }
+                </Slider>
+            </Box>
+        )
+    }
+
+
     return (
-        <Box display={"flex"}>
-            <Slider settings={{ slidesToShow: 5, slideToScroll: 1, dots: false }} >
-                {
-                    dataList.map(function (data) {
-                        return (
-                            <div key={data.id}>
-                                <Card {...data} />
-                            </div>
-                        );
-                    })
-                }
-            </Slider>
-        </Box>
+        <>
+            {isSmallerThan507}
+            {isSmallerThan768}
+            {isSmallerThan1024}
+            {isSmallerThan1440}
+            {isLargerthan1440}
+
+        </>
     )
 }
 
