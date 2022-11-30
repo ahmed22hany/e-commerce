@@ -27,7 +27,7 @@ const NavbarSearch = () => {
                                     </MenuButton>
                                     <MenuList overflow={'scroll'} height={'400px'}>
                                         {category.map((value) => {
-                                            return <MenuItem>{value}</MenuItem>
+                                            return <MenuItem>{value.name}</MenuItem>
                                         })}
 
                                     </MenuList>
@@ -70,7 +70,7 @@ const NavbarSearch = () => {
                                                 </MenuButton>
                                                 <MenuList overflow={'scroll'} height={'400px'}>
                                                     {category.map((value) => {
-                                                        return <MenuItem>{value}</MenuItem>
+                                                        return <MenuItem>{value.name}</MenuItem>
                                                     })}
 
                                                 </MenuList>
