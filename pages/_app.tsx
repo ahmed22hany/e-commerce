@@ -10,7 +10,52 @@ import { useDispatch } from 'react-redux'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const category = ['Grecory', 'Kids', 'Fashion', 'Gadgets', 'Electronics', 'Appliances', 'AutoParts', 'Kitchen', 'Books', 'Baby Products', 'Furniture', 'Tool', 'Bag Pack', 'Sports and Fitness', 'Beauty Products'];
+const category = [{
+  name: 'Grecory',
+  id: 1
+}, {
+  name: 'Kids',
+  id: 2
+}, {
+  name: 'Fashion',
+  id: 3
+}, {
+  name: 'Gadgets',
+  id: 4
+}, {
+  name: 'Electronics',
+  id: 5
+}, {
+  name: 'Appliances',
+  id: 6
+}, {
+  name: 'AutoParts',
+  id: 7
+}, {
+  name: 'Kitchen',
+  id: 8
+}, {
+  name: 'Books',
+  id: 9
+}, {
+  name: 'Baby Products',
+  id: 10
+}, {
+  name: 'Furniture',
+  id: 11
+}, {
+  name: 'Tool',
+  id: 12
+}, {
+  name: 'Bag Pack',
+  id: 13
+}, {
+  name: 'Sports and Fitness',
+  id: 14
+}, {
+  name: 'Beauty Products',
+  id: 15
+}];
 
 const Categories = () => {
   const dispatch = useDispatch()

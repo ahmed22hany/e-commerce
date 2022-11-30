@@ -2,19 +2,24 @@ import React from 'react'
 import {
   Drawer,
   DrawerBody,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
 } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
-import { Button, Input, Link, Box } from '@chakra-ui/react'
+import { Button, Input, Box } from '@chakra-ui/react'
 import { GiHamburgerMenu } from 'react-icons/gi'
-const values = ['Grecory', 'Kids', 'Fashion', 'Gadgets', 'Electronics', 'Appliances', 'AutoParts', 'Kitchen', 'Books', 'Baby Products', 'Furniture', 'Tool', 'Bag Pack', 'Sports and Fitness', 'Beauty Products'];
+import Link from 'next/link'
+import { useSelector } from 'react-redux'
+import { RootState } from '../redux/store'
+
 
 function DrawerExample() {
   const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const values = useSelector((state: RootState) => state.categories.data);
+
 
   return (
     <>
@@ -35,7 +40,7 @@ function DrawerExample() {
           <DrawerBody>
             {values.map((value) => {
               return (
-                <Box my={'2'} py={'2'} _notLast={{ borderBottom: '1px solid #ccc' }} key={value}><Link>{value}</Link></Box>
+                <Box my={'2'} py={'2'} _notLast={{ borderBottom: '1px solid #ccc' }} key={value.id}><Link href={'/products/' + value.id}>{value.name}</Link></Box>
               )
             })}
           </DrawerBody>

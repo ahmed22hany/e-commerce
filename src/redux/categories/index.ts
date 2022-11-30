@@ -1,8 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { setCategories } from './actions'
 
+export type Category = {
+    id: number
+    name: string
+}
+
 export interface CategoriesState {
-    data: string[]
+    data: Category[]
 }
 
 const initialState: CategoriesState = {
