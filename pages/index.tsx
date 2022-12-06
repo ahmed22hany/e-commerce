@@ -5,11 +5,9 @@ import Fullscreen from '../src/layout/Fullscreen';
 
 const index = () => {
   return (
-    <>
-      <Fullscreen>
-        <Homepage />
-      </Fullscreen>
-    </>
+    <Fullscreen>
+      <Homepage />
+    </Fullscreen>
   )
 }
 

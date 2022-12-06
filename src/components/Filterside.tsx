@@ -1,7 +1,7 @@
 import { Box, Text, Stack, Heading, Button } from '@chakra-ui/react'
 import { Checkbox, CheckboxGroup } from '@chakra-ui/react'
 import React from 'react'
-import TrendingItems from './TrendingItems'
+
 const filters = [
     {
         name: 'color',
@@ -15,7 +15,6 @@ const filters = [
 
 
 const Filterside = () => {
-
     return (
         <>
             <Box borderBottom={'1px solid #CCC'} py={'2'}>
@@ -25,15 +24,11 @@ const Filterside = () => {
                         <>
                             <Heading>{value.name}</Heading>
                             <Stack spacing={1} direction='column'>
-                                <Checkbox colorScheme='blue' >
-                                    {value.values[0]}
-                                </Checkbox>
-                                <Checkbox colorScheme='blue' >
-                                    {value.values[1]}
-                                </Checkbox>
-                                <Checkbox colorScheme='blue' >
-                                    {value.values[2]}
-                                </Checkbox>
+                                {value.values.map(item => (
+                                    <Checkbox colorScheme='blue' >
+                                        {item}
+                                    </Checkbox>
+                                ))}
                             </Stack>
                         </>
                     )
