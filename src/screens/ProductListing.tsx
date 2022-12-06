@@ -28,7 +28,6 @@ const ProductListing = () => {
                 </Flex>
 
             </Flex>
-
             <Productswithtwopages />
 
         </>
