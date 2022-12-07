@@ -4,58 +4,78 @@ import * as React from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
 import { store } from '../src/redux/store'
 import { Provider } from 'react-redux'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { setCategoriesAction } from '../src/redux/categories'
 import { useDispatch } from 'react-redux'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { db } from '../src/utils/firebase'
+import { getDocs, collection } from 'firebase/firestore'
+
 
 const category = [{
   name: 'Grecory',
-  id: 1
+  id: 1,
+  attribute: ['Bakery and Bread', 'Froozen Foods', 'Dairy Products', 'Snacks and Crackers']
 }, {
   name: 'Kids',
-  id: 2
+  id: 2,
+  attribute: ['Kids Toy', 'Kids Fishon']
 }, {
   name: 'Fashion',
-  id: 3
+  id: 3,
+  attribute: ['Accessisors', 'Eyeliner']
 }, {
   name: 'Gadgets',
-  id: 4
+  id: 4,
+  attribute: ['Mobile Phones', 'Monitors', 'Printers', 'Scanners', 'Web Camera']
 }, {
   name: 'Electronics',
-  id: 5
+  id: 5,
+  attribute: null
 }, {
   name: 'Appliances',
-  id: 6
+  id: 6,
+  attribute: null
 }, {
   name: 'AutoParts',
-  id: 7
+  id: 7,
+  attribute: null
 }, {
   name: 'Kitchen',
-  id: 8
+  id: 8,
+  attribute: null
 }, {
   name: 'Books',
-  id: 9
+  id: 9,
+  attribute: null
 }, {
   name: 'Baby Products',
-  id: 10
+  id: 10,
+  attribute: null
 }, {
   name: 'Furniture',
-  id: 11
+  id: 11,
+  attribute: null
 }, {
   name: 'Tool',
-  id: 12
+  id: 12,
+  attribute: null
 }, {
   name: 'Bag Pack',
-  id: 13
+  id: 13,
+  attribute: null
 }, {
   name: 'Sports and Fitness',
-  id: 14
+  id: 14,
+  attribute: null
 }, {
   name: 'Beauty Products',
-  id: 15
+  id: 15,
+  attribute: null
 }];
+
+
 
 const Categories = () => {
   const dispatch = useDispatch()
@@ -68,6 +88,16 @@ const Categories = () => {
 }
 
 export default function App({ Component, pageProps }: AppProps) {
+  const colRef = collection(db, "products");
+  useEffect(() => {
+    const getData = async () => {
+      const docsSnap = await getDocs(colRef);
+      docsSnap.forEach(doc => {
+        console.log(doc.data());
+      })
+    };
+    getData()
+  }, [])
 
   return (
     <ChakraProvider>
@@ -78,3 +108,7 @@ export default function App({ Component, pageProps }: AppProps) {
     </ChakraProvider>
   )
 }
+function getData() {
+  throw new Error('Function not implemented.')
+}
+

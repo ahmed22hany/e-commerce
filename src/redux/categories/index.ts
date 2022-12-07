@@ -4,6 +4,7 @@ import { setCategories } from './actions'
 export type Category = {
     id: number
     name: string
+    attribute: string[] | null
 }
 
 export interface CategoriesState {

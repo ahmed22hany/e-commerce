@@ -17,8 +17,7 @@ import { RootState } from '../redux/store'
 
 function DrawerExample() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-
-  const values = useSelector((state: RootState) => state.categories.data);
+  const CategoryValues = useSelector((state: RootState) => state.categories.data);
 
 
   return (
@@ -38,9 +37,9 @@ function DrawerExample() {
           </DrawerHeader>
 
           <DrawerBody>
-            {values.map((value) => {
+            {CategoryValues.map((value) => {
               return (
-                <Box my={'2'} py={'2'} _notLast={{ borderBottom: '1px solid #ccc' }} key={value.id}><Link href={'/products/' + value.id}>{value.name}</Link></Box>
+                <Box my={'2'} py={'2'} _notLast={{ borderBottom: '1px solid #ccc' }} key={value.id}><Link href={`/products/${value.id}`}>{value.name}</Link></Box>
               )
             })}
           </DrawerBody>
